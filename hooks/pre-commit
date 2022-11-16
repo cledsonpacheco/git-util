@@ -1,0 +1,12 @@
+
+#!/bin/sh
+
+#***********************************************************
+#Não permite fazer commit diretamente no branch main
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$branch" = "main" ]; then
+  echo "Não é possível fazer o commit direto no branch main"
+  exit 1
+fi
+#**********************************************************
